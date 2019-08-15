@@ -308,15 +308,130 @@
  	   			default:
  	   			ct = "No style chosen";
  	   		}
- 	   		
- 	   		if(cc.equals("Initial"))
+ 	   	/*****************************************************************************
+ 	   	 * first decision (if-else) controls the class of the new Coating, based on cc
+ 	 	 * second decision (nested if-elsecontrols the pricing, based on getQuality()
+ 	         * third decision controls the duration of the Coating, based on getCarType
+ 	   	 *****************************************************************************/
+ 	   		if(cc.equals("Initial")) 
  	   		{
- 	   			//out = new Initial(cost, duration, renewal, ct); 
- 	   			services.add(out);	
+ 	   			if(getQuality().equalsIgnoreCase("Basic"))
+ 	   			{
+ 	   				if(getCarType().equalsIgnoreCase("Car"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic", "Car"), renewal, ct);	
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Truck"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic","Truck"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Bus"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic","Bus"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Other"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic","Other"), renewal, ct);
+ 	   				}
+ 	   			}
+ 	   			else if(getQuality().equalsIgnoreCase("Advanced"))
+ 	   			{
+ 	   				if(getCarType().equalsIgnoreCase("Car"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Car"), renewal, ct);	
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Truck"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Truck"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Bus"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Bus"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Other"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Other"), renewal, ct);
+ 	   				}
+ 	   			}
+ 	   			else if(getQuality().equalsIgnoreCase("Extreme"))
+ 	   			{
+ 	   				if(getCarType().equalsIgnoreCase("Car"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Car"), renewal, ct);	
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Truck"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Truck"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Bus"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Bus"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Other"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Other"), renewal, ct);
+ 	   				}
+ 	   			}
  	   		}
- 	   		else
+ 	   		else // user wants to add a quartz coating service
  	   		{
- 	   			//out = new Quartz(cost, duration, renewal, ct)
+ 	   			if(getQuality().equalsIgnoreCase("Basic"))
+ 	   			{
+ 	   				if(getCarType().equalsIgnoreCase("Car"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic", "Car"), renewal, ct);	
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Truck"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic","Truck"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Bus"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic","Bus"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Other"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Basic"), out.setDuration("Basic","Other"), renewal, ct);
+ 	   				}
+ 	   			}
+ 	   			else if(getQuality().equalsIgnoreCase("Advanced"))
+ 	   			{
+ 	   				if(getCarType().equalsIgnoreCase("Car"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Car"), renewal, ct);	
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Truck"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Truck"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Bus"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Bus"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Other"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Advanced"), out.setDuration("Advanced","Other"), renewal, ct);
+ 	   				}
+ 	   			}
+ 	   			else if(getQuality().equalsIgnoreCase("Extreme"))
+ 	   			{
+ 	   				if(getCarType().equalsIgnoreCase("Car"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Car"), renewal, ct);	
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Truck"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Truck"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Bus"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Bus"), renewal, ct);
+ 	   				}
+ 	   				else if(getCarType().equalsIgnoreCase("Other"))
+ 	   				{
+ 	   					out = new Initial(out.setCost("Extreme"), out.setDuration("Extreme","Other"), renewal, ct);
+ 	   				}
+ 	   			}
  	   			services.add(out);	
  	   		}
  	   }
